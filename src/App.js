@@ -1,12 +1,10 @@
 import "./App.css";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
     <div className="App">
-      <h1>Twitter Clone</h1>
-      <TwitterIcon />
-      <TwitterIcon />
+      <Sidebar />
     </div>
   );
 }
