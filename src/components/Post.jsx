@@ -6,6 +6,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PublishIcon from "@mui/icons-material/Publish";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import "../styles/Post.css";
+
 const Post = ({ displayName, username, verified, text, image, avatar }) => {
   return (
     <div className="post">
@@ -17,8 +18,9 @@ const Post = ({ displayName, username, verified, text, image, avatar }) => {
           <div className="post__headerText">
             <h3>
               Twt Bot
-              <span>
+              <span className="post__headerSpecial">
                 <VerifiedUserIcon className="post__badge" />
+                @twitterbot
               </span>
             </h3>
           </div>
