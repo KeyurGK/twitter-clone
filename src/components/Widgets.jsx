@@ -1,9 +1,27 @@
 import React from "react";
 import "../styles/Widgets.css";
+import SearchIcon from "@mui/icons-material/Search";
+import {
+  TwitterTimelineEmbed,
+  TwitterShareButton,
+  TwitterTweetEmbed,
+} from "react-twitter-embed";
 const Widgets = () => {
   return (
     <div className="widgets">
-      <h1>Widhgets</h1>
+      <div className="widgets__input">
+        <SearchIcon className="widget__searchIcon" />
+        <input placeholder="Search Twitter" type="text" />
+      </div>
+      <div className="widgets__widgetContainer">
+        <h2>What's happening</h2>
+        <TwitterTweetEmbed tweetId={""} />
+        <TwitterTimelineEmbed
+          sourceType="profile"
+          screenName="keyurGK"
+          options={{ height: 400 }}
+        />
+      </div>
     </div>
   );
 };
