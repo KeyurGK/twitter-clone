@@ -5,7 +5,7 @@ import RepeatIcon from "@mui/icons-material/Repeat";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PublishIcon from "@mui/icons-material/Publish";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
-
+import "../styles/Post.css";
 const Post = ({ displayName, username, verified, text, image, avatar }) => {
   return (
     <div className="post">
