@@ -18,7 +18,7 @@ const Widgets = () => {
         <TwitterTweetEmbed tweetId={""} />
         <TwitterTimelineEmbed
           sourceType="profile"
-          screenName="keyurGK"
+          screenName="ANI"
           options={{ height: 400 }}
         />
       </div>
