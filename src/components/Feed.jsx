@@ -18,7 +18,16 @@ const Feed = () => {
         <h2>Home</h2>
       </div>
       <TweetBox />
-      <Post />
+      {posts.map((post) => (
+        <Post
+          displayName={post.displayName}
+          username={post.username}
+          verified={post.verified}
+          text={post.text}
+          avatar={post.avatar}
+          image={post.image}
+        />
+      ))}
     </div>
   );
 };

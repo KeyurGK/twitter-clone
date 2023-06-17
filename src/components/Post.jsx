@@ -17,18 +17,18 @@ const Post = ({ displayName, username, verified, text, image, avatar }) => {
         <div className="post__header">
           <div className="post__headerText">
             <h3>
-              Twt Bot
+              {displayName}
               <span className="post__headerSpecial">
                 <VerifiedUserIcon className="post__badge" />
-                @twitterbot
+                {username}
               </span>
             </h3>
           </div>
           <div className="post__headerDescription">
-            <p>avasdfsfdsgdsfdgdfgdgdg</p>
+            <p>{text}</p>
           </div>
         </div>
-        <img />
+        <img src={image} />
         <div className="post__footer">
           <ChatBubbleOutlineIcon fontSize="small" />
           <RepeatIcon fontSize="small" />
