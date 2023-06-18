@@ -10,8 +10,8 @@ const TweetBox = () => {
   const sendTweet = (e) => {
     e.preventDefault();
     db.collection("posts").add({
-      displayName: "KK",
-      username: "kkkkk",
+      displayName: "Aditya",
+      username: "ADI",
       verified: true,
       text: tweetMessage,
       image: tweetImage,
