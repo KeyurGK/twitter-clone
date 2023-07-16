@@ -5,7 +5,7 @@ import Post from "./Post";
 import db from "../firebase";
 import FlipMove from "react-flip-move";
 
-const Feed = () => {
+const Feed = (props) => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {

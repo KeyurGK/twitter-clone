@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "../styles/Landing.css";
 import twitterLanding from "../images/twitterLanding.jpg";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useHistory } from "react-router-dom";
+import { auth, provider } from "../firebase";
 
 const Landing = () => {
   const Navigate = useNavigate();
   const handleSubmit = () => {
     Navigate("/signin");
+  };
+  const handleGoogle = () => {
+    auth
+      .signInWithPopup(provider)
+      .then((result) => {
+        const userName = result.user.displayName;
+        const uid = result.user.uid;
+        Navigate("/home", { state: { userName, id: uid } });
+        //console.log(result.user.displayName);
+        //console.log(result.user.uid);
+      })
+      .catch((error) => alert(error.message));
   };
   return (
     <div className="container">
@@ -20,7 +33,9 @@ const Landing = () => {
         <h3>Happening Now</h3>
         <h4>Join Twitter Today.</h4>
         <div className="account_auth">
-          <Button className="google-account">Sign Up with Google</Button>
+          <Button className="google-account" onClick={handleGoogle}>
+            Sign Up with Google
+          </Button>
           <p>or</p>
           <Button className="create-account" onClick={handleSubmit}>
             Create Account

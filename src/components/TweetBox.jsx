@@ -1,16 +1,16 @@
 import { Button } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
 import "../styles/TweetBox.css";
 import { useState } from "react";
 import db from "../firebase";
 
-const TweetBox = () => {
+const TweetBox = (props) => {
   const [tweetMessage, setTweetMessage] = useState("");
   const [tweetImage, setTweetImage] = useState("");
   const sendTweet = (e) => {
     e.preventDefault();
     db.collection("posts").add({
-      displayName: "Aditya",
+      displayName: "adddd",
       username: "ADI",
       verified: true,
       text: tweetMessage,
