@@ -1,15 +1,22 @@
 import "./App.css";
-import Sidebar from "./components/Sidebar";
-import Feed from "./components/Feed";
-import Widgets from "./components/Widgets";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Landing from "./components/Landing";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
+import Home from "./components/Home";
+import PrivateRoutes from "./components/PrivateRoutes";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route element={<PrivateRoutes />}>
+          <Route path="/home" element={<Home />} />
+        </Route>
       </Routes>
     </div>
   );

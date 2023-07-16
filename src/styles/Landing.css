@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.container .container-left {
+  flex: 6;
+  height: 100vh;
+}
+.container-left img {
+  height: 100%;
+  width: 100%;
+}
+.container .container-right {
+  background-color: black;
+  flex: 4;
+}
+.container-right .twitter-icon {
+  color: white;
+  margin-left: 30px;
+  margin-top: 30px;
+  font-size: 64px;
+}
+.container-right h3,
+.container-right h4,
+.container-right p {
+  color: white;
+  margin-left: 30px;
+}
+.container-right h3 {
+  font-size: 58px;
+}
+.container-right h4 {
+  font-size: 32px;
+  margin-top: -30px;
+}
+.container-right .account_auth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container-right .google-account {
+  width: 250px;
+  background-color: white;
+  color: black;
+  border-radius: 30px;
+  text-transform: capitalize;
+}
+.container-right .google-account:hover {
+  background-color: white;
+  color: black;
+}
+.container-right .create-account {
+  width: 250px;
+  background-color: rgb(0, 204, 255);
+  border: 1px solid rgb(0, 204, 255);
+  text-transform: capitalize;
+  color: white;
+  border-radius: 30px;
+}
+
+.container-right .create-account:hover {
+  color: white;
+  background-color: rgb(0, 204, 255);
+}
