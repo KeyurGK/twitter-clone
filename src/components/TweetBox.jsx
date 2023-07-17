@@ -3,14 +3,18 @@ import React, { useContext } from "react";
 import "../styles/TweetBox.css";
 import { useState } from "react";
 import db from "../firebase";
+import { UserContext } from "../context/Context";
 
 const TweetBox = (props) => {
+  const { user } = useContext(UserContext);
+  // const dname = user.displayName;
+  console.log(user.displayName);
   const [tweetMessage, setTweetMessage] = useState("");
   const [tweetImage, setTweetImage] = useState("");
   const sendTweet = (e) => {
     e.preventDefault();
     db.collection("posts").add({
-      displayName: "adddd",
+      displayName: user.displayName,
       username: "ADI",
       verified: true,
       text: tweetMessage,

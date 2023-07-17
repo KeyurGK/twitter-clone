@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../styles/Feed.css";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
 import db from "../firebase";
 import FlipMove from "react-flip-move";
+import { UserContext } from "../context/Context";
 
 const Feed = (props) => {
+  const user = useContext(UserContext);
+  console.log(user.userN);
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
