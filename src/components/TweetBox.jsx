@@ -3,24 +3,21 @@ import React, { useContext } from "react";
 import "../styles/TweetBox.css";
 import { useState } from "react";
 import db from "../firebase";
-import { UserContext } from "../context/Context";
+import { useUserContext } from "../context/UserContext";
 
 const TweetBox = (props) => {
-  const { user } = useContext(UserContext);
   // const dname = user.displayName;
-  console.log(user.displayName);
   const [tweetMessage, setTweetMessage] = useState("");
   const [tweetImage, setTweetImage] = useState("");
+  const { userProfile } = useUserContext();
+
   const sendTweet = (e) => {
     e.preventDefault();
     db.collection("posts").add({
-      displayName: user.displayName,
-      username: "ADI",
-      verified: true,
+      displayName: userProfile.userName,
       text: tweetMessage,
       image: tweetImage,
-      avatar:
-        "https://avatars.githubusercontent.com/u/56074740?s=400&u=47d26f858ed472b21f75c7226959c61296b65688&v=4",
+      avatar: userProfile.photo,
     });
     setTweetImage("");
     setTweetMessage("");

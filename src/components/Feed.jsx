@@ -4,11 +4,8 @@ import TweetBox from "./TweetBox";
 import Post from "./Post";
 import db from "../firebase";
 import FlipMove from "react-flip-move";
-import { UserContext } from "../context/Context";
 
-const Feed = (props) => {
-  const user = useContext(UserContext);
-  console.log(user.userN);
+const Feed = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -27,8 +24,6 @@ const Feed = (props) => {
           <Post
             key={post.text}
             displayName={post.displayName}
-            username={post.username}
-            verified={post.verified}
             text={post.text}
             avatar={post.avatar}
             image={post.image}

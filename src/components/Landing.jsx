@@ -5,10 +5,10 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import { Button } from "@mui/material";
 import { useNavigate, useHistory } from "react-router-dom";
 import { auth, provider } from "../firebase";
-import { UserContext } from "../context/Context";
+import { useUserContext } from "../context/UserContext";
 
 const Landing = () => {
-  const { user, setUser } = useContext(UserContext);
+  const { setUserProfile } = useUserContext();
   const Navigate = useNavigate();
   const handleSubmit = () => {
     Navigate("/signin");
@@ -18,11 +18,16 @@ const Landing = () => {
       .signInWithPopup(provider)
       .then((result) => {
         //setUser(result);
-        const userName = result.user.displayName;
-        const uid = result.user.uid;
+        console.log(result);
+        setUserProfile({
+          userName: result.user.displayName,
+          photo: result.user.photoURL,
+        });
+        // const userName = result.user.displayName;
+        // const uid = result.user.uid;
         //const user = { userN: result.user.displayName, id: result.user.uid };
-        setUser(result.user);
-        Navigate("/home", { state: { userName, id: uid } });
+        Navigate("/home");
+        // Navigate("/home", { state: { userName, id: uid } });
         //console.log(result.user.displayName);
         //console.log(result.user.uid);
       })

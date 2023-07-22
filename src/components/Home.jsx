@@ -7,8 +7,8 @@ import { auth, provider } from "../firebase";
 import { useLocation } from "react-router-dom";
 
 const Home = () => {
-  const location = useLocation();
-  const { userName, id } = location.state;
+  // const location = useLocation();
+  // const { userName, id } = location.state;
   //console.log(userName);
   return (
     <div className="App">
